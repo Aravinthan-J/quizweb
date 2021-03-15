@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 💯</title>
+
+    <script src="quiz.js"></script>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+
+    <center>
+        <header>
+            Quiz App
+        </header>
+    </center>
+    <div id="container">
+        <div id="username">
+            <p>Enter Your Name : <input type="text" id="name" name="user" placeholder="Enter your name" autocomplete="off" /> <input type="submit" id="next" value="Next 👉🏻" onclick="nextname()" /></p>
+        </div>
+        <p id="welcome"></p>
+        <progress id="load" value="0" max="100"></progress>
+        <div id="qn">
+            <div style="display: flex;padding-left: 10px;">
+                <p id="qnno"></p>
+                <p id="score" style="padding-left: 340px ;"></p>
+            </div>
+            <div id="ch">
+                <p id="qndet"></p>
+                <div><input type="radio" id="op1" onclick="check(id)" name="Option" required><label id="opt1"></label></div>
+                <div><input type="radio" id="op2" onclick="check(id)" name="Option"><label id="opt2"></label></div>
+                <div><input type="radio" id="op3" onclick="check(id)" name="Option"><label id="opt3"></label></div>
+                <div><input type="radio" id="op4" onclick="check(id)" name="Option"><label id="opt4"></label></div>
+            </div>
+            <div id="buttonlast">
+                <input type="button" id="nextbtn" onclick="next()" value="Next 👉🏻">
+                <form action="quiz.php" target="blink" method="post">
+                    <input type="hidden" name="count" id="scorect">
+                    <input type="hidden" name="user" id="urname">
+                    <input type="submit" value="Submit  🏁" onclick="submitbtn()" id="submit">
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <center>
+        <div id="result">
+            <div id="res">
+                <p id="pass">
+                </p>
+                <p id="passscore"></p>
+            </div>
+        </div>
+
+        <div id="tabel">
+            <iframe src="quiz.php" height="350px" width="100%" name="blink"></iframe>
+        </div>
+    </center>
+</body>
+
+</html>
